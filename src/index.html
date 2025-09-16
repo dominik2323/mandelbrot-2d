@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="app.ts"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        display: block;
+        /* background-color: gray; */
+      }
+      #info {
+        color: rgb(0, 255, 0);
+        display: flex;
+        justify-content: space-between;
+        /* width: 100%; */
+        column-gap: 50px;
+      }
+      .canvas-c {
+        position: relative;
+        width: fit-content;
+        border: 1px solid rgba(0, 255, 0, 0.5);
+      }
+      .dash {
+        position: absolute;
+        width: 30px;
+        height: 1px;
+        background-color: rgb(0, 255, 0);
+        /* transform: translate(-50%, -50%); */
+        /* mix-blend-mode: exclusion; */
+      }
+      .dash-lc {
+        top: 50%;
+        left: 0;
+      }
+      .dash-rc {
+        right: 0;
+        top: 50%;
+      }
+      .dash-tc {
+        right: 50%;
+        top: 0%;
+        width: 1px;
+        height: 30px;
+      }
+      .dash-bc {
+        right: 50%;
+        bottom: 0%;
+        width: 1px;
+        height: 30px;
+      }
+      .crosshair {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgb(0, 255, 0);
+        transform: translate(50%, -50%);
+        right: 50%;
+        /* mix-blend-mode: exclusion; */
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvas-c">
+      <div class="dash dash-lc"></div>
+      <div class="dash dash-rc"></div>
+      <div class="dash dash-tc"></div>
+      <div class="dash dash-bc"></div>
+      <div class="crosshair"></div>
+      <div id="container"></div>
+    </div>
+    <div id="info">
+      <span class="time"></span>
+      <span class="iterations"></span>
+    </div>
+  </body>
+</html>
